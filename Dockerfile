@@ -1,5 +1,5 @@
-FROM debian:8
+FROM debian:13-slim
 
 RUN apt-get update \
-    && apt-get -y install redir
-
+    && apt-get install -y --no-install-recommends redir \
+    && rm -rf /var/lib/apt/lists/*
